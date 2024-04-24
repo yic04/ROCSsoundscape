@@ -27,6 +27,7 @@ class SettingsViewController: BaseTableViewController {
         case poi = 1
         case mobility = 2
         case beacon = 3
+        
     }
     
     private static let cellIdentifiers: [IndexPath: String] = [
@@ -36,6 +37,7 @@ class SettingsViewController: BaseTableViewController {
         IndexPath(row: 3, section: Section.general.rawValue): "volumeSettings",
         IndexPath(row: 4, section: Section.general.rawValue): "manageDevices",
         IndexPath(row: 5, section: Section.general.rawValue): "siriShortcuts",
+        IndexPath(row: 6, section: Section.general.rawValue): "cutoffSettings",
         
         IndexPath(row: 0, section: Section.audio.rawValue): "mixAudio",
 
@@ -80,7 +82,7 @@ class SettingsViewController: BaseTableViewController {
         guard let sectionType = Section(rawValue: section) else { return 0 }
         
         switch sectionType {
-        case .general: return 6
+        case .general: return 7
         case .audio: return 1
         case .callouts: return SettingsContext.shared.automaticCalloutsEnabled ? 4 : 1
         case .streetPreview: return 1

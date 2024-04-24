@@ -659,6 +659,8 @@
 
 /* Title, Audio Beacon */
 "beacon.audio_beacon" = "Audio Beacon";
+/* Title, Cut-Off Distance*/
+"beacon.cutoff"= "Cut-Off Distance";
 
 /* Notification, %@ is a location, "Beacon on <Some Place>" {NumberedPlaceholder="%@"} */
 "beacon.beacon_on" = "Beacon on %@";
