@@ -80,6 +80,42 @@ This is the official language guide.You don’t need to memorize every chapter o
         Once the required tiles are downloaded, the SpatialDataContext forwards location updates to the rest of the application, with the EventProcessor being a key recipient of these updates.
 
         When other components within Soundscape necessitate access to nearby map data, they invoke the getDataView(for:searchDistance:) function on the SpatialDataContext. This function returns a SpatialDataView object, which consolidates map data from multiple tiles stored in the application's database into a unified view.
+    * Localization
+        For every supported language, there is a `Localizable.strings` file which holds the translated strings.
+        
+        These files are located in folders that correspond to their locale identifiers. For example, the strings file for `en-US` is located in:  
+        `GuideDogs/Assets/Localization/en-US.lproj/Localizable.strings`
+
+        The `.strings` files hold key-value pairs. The value is the translated string and the key is an identifier, to be used in the code and by the translators.  
+        Above every string should be a comment that describes the context in which the string will be used. For example:
+
+        ```strings
+        /* The title for the settings screen */
+        "settings.screen_title" = "Settings";
+        ```
+        You can find more about localization on this [page](https://github.com/yic04/ROCSsoundscape/blob/Bulidng_Tips/docs/ios-client/build-and-test/localization.md)
+        
+    * Build Configurations
+
+     The Soundcape Xcode project contains 3 build configurations. We used each configuration for the purposes defined below, but you may wish to use a different configuration model.
+
+    * **Debug** - Used for local builds / when installing directly from Xcode
+    * **AdHoc** - Used for testing outside of TestFlight releases
+    * **Release** - Used for AppStore and TestFlight builds
+
+* Tips for the issues that I have been working on
+    * You don't need to know everything about Swift before the project. You will familiarize with Swift and Xcode while you working on the project.(Swift is the best programming language ever!!! 😋)
+
+    * Begin by selecting an easy issue to work on, allowing you to familiarize yourself with the project. Once comfortable, you can gradually transition to more challenging issues, enabling deeper involvement in the project's development.
+
+    * Becaon Cut-Off distance currently is been hard-coded as the constant **EnterImmediateVicinityDistance** at https://github.com/soundscape-community/soundscape/blob/main/apps/ios/GuideDogs/Code/Data/Destination%20Manager/DestinationManager.swift#L29.
+
+    * I have updated something like a [lab notebook](https://github.com/yic04/ROCSsoundscape/blob/Bulidng_Tips/docs/Soundscape%20Lab%20Notebook.md) to record the progress and lessons learned throughout the semester within the Soundscape project at RCOS. 
+
+
+
+
+
 
 
 
