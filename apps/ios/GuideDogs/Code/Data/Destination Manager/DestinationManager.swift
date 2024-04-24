@@ -26,7 +26,11 @@ enum DestinationManagerError: Error {
 class DestinationManager: DestinationManagerProtocol {
     
     static let LeaveImmediateVicinityDistance: CLLocationDistance = 30.0
-    static let EnterImmediateVicinityDistance: CLLocationDistance = 15.0
+    static var EnterImmediateVicinityDistance: CLLocationDistance = 15.0
+    
+    static func updateEnterImmediateVicinityDistance(change: CLLocationDistance){
+        EnterImmediateVicinityDistance += change
+    }
     
     // MARK: Notification Keys
     
