@@ -58,7 +58,7 @@ This syntax is very unqiue to Swift, and I don't understand when the first time 
 * CLLocationDistance : This is the type for constant
 * = 15.0 : This assigns the inital value 15 to constant. 
 
-If this written in Java it would be :
+If this is written in Java it would be :
 ``` strings
 static final CLLocationDistance EnterImmediateVicinityDistance = 15;
 ```
@@ -73,10 +73,44 @@ Once I understand what it is, I need to understand how can I change it in other 
     EnterImmediateVicinityDistance = newValue
     }
   ```
+## Update 03/29/24
+Now, I'm moving forward to the second part of this issue, which involves implementing a user interface (UI) to make the audio beacon cut-off distance configurable. However, I've encountered more challenges than expected since starting this project. Implementing a UI in Swift requires a comprehensive understanding of how views, ViewControllers, and Storyboards work together seamlessly. Soundscape, being a sophisticated project, already has numerous UI components in place. Therefore, it's crucial to ensure that my implementation aligns with the existing design language and doesn't conflict with the user experience of the app. Additionally, I need to consider backward compatibility and ensure that users can seamlessly transition between the old and new features without any disruptions. This involves careful consideration of design patterns, user interactions, and maintaining consistency throughout the app. Despite these challenges, I'm eager to tackle them head-on and contribute to improving Soundscape for its users. I would understanding the concepts and syntax is one of the diffuclt part of this project.
+
+**Here is a summary you might want to learn before you start to design your own UI in swift.**
+* View
+  
+  In Swift, a "view" is a fundamental component used to build the user interface (UI) of an application. It represents a visual element that users interact with, such as buttons, labels, text fields, and more. Views are responsible for rendering content on the screen and responding to user input. They can be organized hierarchically, allowing for complex UI layouts. In essence, views are the building blocks of an app's UI, defining its structure, appearance, and behavior. There are many different built-in views for different UI development, including ScrollView,CollectionView, TableView and so on. There are might be some difference between the same view in different platform. 
+* Different View Stacks
+  
+  In SwiftUI, 'HStack', 'ZStack', and 'VStack' are layout containers that allow you to arrange views horizontally, vertically, or in a layered manner respectively. These layout containers provide a flexible and intuitive way to arrange views in SwiftUI, making it easy to create complex user interfaces. They are often used in combination with each other to achieve more complex layouts.
+  * HStack (Horizontal Stack)
+  
+    HStack arranges its child views horizontally from leading to trailing edge.
+  * ZStack (Layer Stack)
+
+    ZStack arranges its child views on top of each other, with the first view added being at the back and subsequent views being layered on top.
+  * VStack (Vertical Stack)
+  
+    VStack arranges its child views vertically from top to bottom.
+* View Controller
+  
+  "In iOS development, a view controller is a fundamental building block used within the Model-View-Controller (MVC) design pattern to manage the presentation and behavior of a user interface (UI). View controllers handle various tasks, including managing views, handling user interaction, coordinating data flow between the app's data model and views, navigating between screens, and managing the app's lifecycle. They are responsible for creating, manipulating, and coordinating the presentation of views, responding to user input, such as taps, gestures, and button presses, and ensuring that the UI reflects the current state of the data. Additionally, view controllers manage transitions, animations, and the flow of the app's user interface, as well as the lifecycle of the app's components, including initializing, loading views, responding to view events, and deallocating resources when they're no longer needed." Same as the View, there are many different type of View Controller in SwiftUI(Again, you don't have to know all of them) And you might want to learn how View Controller and storyboard/scene work together. There are two keyword you must know for UI development in View Controller:
+  * IBOutlet:
+  
+    "IBOutlet is a keyword used in iOS development with Interface Builder, which is a graphical tool for designing user interfaces. It is used in conjunction with properties in a view controller or other custom class to establish a connection between a user interface element defined in a storyboard or XIB file and the corresponding code."
+  * IBAction:
+    
+    "IBAction is another keyword used in iOS development with Interface Builder. It is used to define an action method that can be connected to a user interface element, such as a button or a slider, in a storyboard or XIB file."
+* StoryBoard:
+  
+    "In Swift, a storyboard is a visual interface design tool provided by Xcode for developing iOS, macOS, watchOS, and tvOS applications. It allows developers to create and prototype user interfaces graphically, without needing to write code for every aspect of the interface. With storyboards, developers can visually connect different scenes representing view controllers, drag and drop UI elements onto the canvas, and customize their appearance and behavior using Interface Builder. Segues define transitions between view controllers, enabling developers to create complex navigation flows, while support for size classes and Auto Layout ensures adaptive layouts across various screen sizes and orientations. Overall, storyboards streamline the development process, providing a clear visual representation of the app's structure and flow while enabling rapid iteration and experimentation."Bascially, storyboard is like a flow-graph for view controller. It can determine the hirearchy of view controller.
 
 
-
-
-
-
+#### Here are some useful resources if you are visual leaner like me and want to learn UI development in Swift:
+* https://www.youtube.com/watch?v=1HOcrAnlpgE&list=PL8seg1JPkqgG3822Pbf_H9xldrODNV3XI
+ This is video series include the most aspects of UI design in Swift UI, including, IBAction & IBOutlet, Storyboard, extensions, even how to implement widget. It is beginner friendly.
+* https://www.youtube.com/watch?v=wEF9AXy8-Sc
+This video teaches how to use a variety of essential SwiftUI user interface elements and containers, including HStack, ZStack, and different of views.
+* https://www.youtube.com/watch?v=emDjAz49tzE
+  This video provide a quick introduction to Xcode User Interface, if you are not faimilar with Xcode, I highly recommand you to watch this video.
 
