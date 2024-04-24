@@ -89,12 +89,12 @@ This is the official language guide.You don’t need to memorize every chapter o
         The `.strings` files hold key-value pairs. The value is the translated string and the key is an identifier, to be used in the code and by the translators.  
         Above every string should be a comment that describes the context in which the string will be used. For example:
 
-        ```strings
+        ``` strings
         /* The title for the settings screen */
         "settings.screen_title" = "Settings";
         ```
         You can find more about localization on this [page](https://github.com/yic04/ROCSsoundscape/blob/Bulidng_Tips/docs/ios-client/build-and-test/localization.md)
-        
+
     * Build Configurations
 
      The Soundcape Xcode project contains 3 build configurations. We used each configuration for the purposes defined below, but you may wish to use a different configuration model.
