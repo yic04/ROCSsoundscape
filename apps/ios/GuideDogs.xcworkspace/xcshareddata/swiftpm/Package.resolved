@@ -1,4 +1,5 @@
 {
+  "originHash" : "7516521c32e79b4ddf17ec59bd2dae6765e4847cd83277fc6f04dc2880d420bd",
   "pins" : [
     {
       "identity" : "appcenter-sdk-apple",
@@ -108,5 +109,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
