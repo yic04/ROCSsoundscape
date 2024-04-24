@@ -44,6 +44,38 @@ After several hours of searching and filtering out unrelated code segments, I fi
 To confirm those potential coordinates, I requested Professor Turner to invite me to the Slack for the Soundscape Community. I highly recommend that anyone interested in working on Soundscape reach out to Professor Turner (if he is still the project lead for Soundscape Testing) to request access to the Slack community. In the Slack, you can ask questions about iOS development, Soundscape, SwiftUI, or anything else, and get support from fellow developers. In the Slack, I reached out to Daniel Steinbrook, who is RPI almuni and also an expert on soundscape, developing soundscape for years, about the those coordinates.
 
 Finally, I knew that the audio beacon cut-off distance has been hard-coded as a constant `EnterImmediateVicinityDistance` and defined [here](https://github.com/soundscape-community/soundscape/blob/main/apps/ios/GuideDogs/Code/Data/Destination%20Manager/DestinationManager.swift#L29) and Daniel also explained to me that "Beacons are implemented using a more abstract concept of "geofencing" which just means defining a boundary around a point that a user can be inside or outside.
+## Update 03/01/24
+From last week, I have learned that the audio beacon cut-off distance has been hard-coded as constant. Before I move to the second part of this issue, which is to implement an UI that makes the distance configurable by the user, I need to understand how to change that constant.
+
+Below is the acutal implementation of constant `EnterImmediateVicinityDistance` in Soundscape:
+``` strings
+    static let EnterImmediateVicinityDistance: CLLocationDistance = 15.0
+```
+This syntax is very unqiue to Swift, and I don't understand when the first time I saw it. However, it is very easy to understand, after doing some study(never skip basic syntax for a language). We can break down into following parts:
+* static: This keyword means that the property belongs to the type itself rather than to instances of the type. It can be accessed using the type name, e.g., ClassName.propertyName.
+* let:This keyword declares a constant (unchangeable) value\
+* EnterImmediateVicinityDistance: As we all known, variable name
+* CLLocationDistance : This is the type for constant
+* = 15.0 : This assigns the inital value 15 to constant. 
+
+If this written in Java it would be :
+``` strings
+static final CLLocationDistance EnterImmediateVicinityDistance = 15;
+```
+Once I understand what it is, I need to understand how can I change it in other files.
+* If I need to modify the constant frequently, I need to change it to a variable. It can accomplish easily by replacing let keyword with var.
+    ``` strings
+    static var EnterImmediateVicinityDistance: CLLocationDistance = 15.0
+    ```
+* I can write a static method to modify the variable, so I can easily change the value of that variable in other class.
+  ```
+  static func setEnterImmediateVicinityDistance(_ newValue: CLLocationDistance) {
+    EnterImmediateVicinityDistance = newValue
+    }
+  ```
+
+
+
 
 
 
